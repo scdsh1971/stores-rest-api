@@ -10,7 +10,8 @@ from resources.item import Item, ItemList
 from resources.store import Store,StoreList
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] =  os.environ.get('DATABASE_URL','sqlite:///data.db') # this noew returns the postrgres url from heroku if the value is found, however sqllite3 will be used when run locally, as the environ var will be blank locally  'sqlite:///data.db'
+app.config['SQLALCHEMY_DATABASE_URI'] =  os.environ.get('DATABASE_URL','sqlite:///data.db')
+ # this noew returns the postrgres url from heroku if the value is found, however sqllite3 will be used when run locally, as the environ var will be blank locally  'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'dave'
 api = Api(app)
